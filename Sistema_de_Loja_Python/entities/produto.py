@@ -6,18 +6,18 @@ class Produto:
         
 
     def aumentar_estoque(self, quantidade):
-        if(quantidade < 0):
+        if quantidade <= 0:
             print("Quantidade inválida")
             return
-        
+
         self.quantidade_estoque += quantidade
     
     def diminuir_estoque(self, quantidade):
-        if(quantidade < 0):
+        if quantidade <= 0:
             print("Quantidade inválida")
             return
         
         self.quantidade_estoque -= quantidade
 
     def __str__(self):
-        return f"Nome: {self.nome}, Preço: {self.preco}, Quantidade em Estoque: {self.quantidade_estoque}"
+        return f"Nome: {self.nome}, Preço: R$ {self.preco}, Quantidade em Estoque: {self.quantidade_estoque}"
