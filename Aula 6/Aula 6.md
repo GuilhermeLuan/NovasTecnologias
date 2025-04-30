@@ -18,3 +18,8 @@ django-admin startproject project
 ```
 py manage.py runserver
 ```
+
+# Criando um APP
+```
+py .\manage.py startapp app
+```
