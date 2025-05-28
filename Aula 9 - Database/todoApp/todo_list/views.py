@@ -1,0 +1,15 @@
+from django.shortcuts import render
+
+from .models import todo
+
+# Create your views here.
+def home(request):
+    todos = todo.objects.all()
+    return render(request, 'home.html', {'todo': todos} )
+
+def about(request):
+    context = {
+        "name": "Guilherme Luan",
+        "age": 30,
+    }
+    return render(request, 'about.html', context )

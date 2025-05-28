@@ -24,7 +24,24 @@ py manage.py runserver
 py .\manage.py startapp app
 ```
 
+- Apos criar um APP precisamos adicionar ele em settings na paz raiz do projeto.
+
 # Fazendo migration
 ```
 py .\manage.py migrate
+```
+
+# Gerando super usuario
+```
+py .\manage.py createsuperuser
+```
+
+# Configurando banco de dados
+
+- Comando utilizado para criar um novo model
+```
+py .\manage.py makemigrations
+```
+```
+py .\manage.py migrate 
 ```
