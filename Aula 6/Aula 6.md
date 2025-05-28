@@ -23,3 +23,8 @@ py manage.py runserver
 ```
 py .\manage.py startapp app
 ```
+
+# Fazendo migration
+```
+py .\manage.py migrate
+```
