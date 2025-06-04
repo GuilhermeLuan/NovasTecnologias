@@ -5,7 +5,7 @@ from .models import todo
 # Create your views here.
 def home(request):
     todos = todo.objects.all()
-    return render(request, 'home.html', {'todo': todos} )
+    return render(request, 'home.html', {'todos': todos} )
 
 def about(request):
     context = {
