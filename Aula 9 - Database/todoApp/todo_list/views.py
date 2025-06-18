@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import todo
 from .forms import TodoForm
+from django.contrib import messages
 
 # Create your views here.
 def home(request):
@@ -20,3 +21,21 @@ def about(request):
         "age": 30,
     }
     return render(request, 'about.html', context )
+
+def delete(request, id):
+    todo = todo.objects.get(id=id)
+    todo.delete()
+    messages.success(request, 'Todo deleted successfully!')
+    return redirect('home')
+
+def done(request, id):
+    todo_item = todo.objects.get(id=id)
+    todo_item.done = True
+    todo_item.save()
+    return redirect('home')
+
+def done(request, id):
+    todo_item = todo.objects.get(id=id)
+    todo_item.done = False
+    todo_item.save()
+    return redirect('home')
